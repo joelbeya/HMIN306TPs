@@ -6,7 +6,7 @@ import java.util.Set;
 
 public class CallGraphBySpoon {
 
-    public static String PROJECT_PATH = "lib/SimpleSample/company/src/com/company";
+    public static String PROJECT_PATH = "/home/bj/eclipse-workspace/HMIN306TP2Partie2";
 
     public static void main( String[] args) {
 

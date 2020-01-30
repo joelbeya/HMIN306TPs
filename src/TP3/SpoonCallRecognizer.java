@@ -14,7 +14,9 @@ public class SpoonCallRecognizer<T>
 {
 	Map<String, Set<String>> methodsCalls = new HashMap<>();
 	public Map<String, Set<String>> classes = new HashMap<>();
+	@SuppressWarnings("rawtypes")
 	private Map<CtType, List<CtMethod>> classesMethods = new HashMap<>();
+	@SuppressWarnings("rawtypes")
 	private Map<CtMethod, List<String>> methodsInvocations = new HashMap<>();
 
 	private Launcher launcher = new Launcher();
@@ -34,7 +36,6 @@ public class SpoonCallRecognizer<T>
 		bindMethods();
 	}
 
-	@SuppressWarnings("Duplicates")
 	private void bindMethods() {
 
 		for ( CtType<?> classe : classesMethods.keySet() ){
@@ -63,7 +64,7 @@ public class SpoonCallRecognizer<T>
 					}
 				}
 
-				for (CtConstructorCall elem : method.getElements(new TypeFilter<>(CtConstructorCall.class))) {
+				for (CtConstructorCall<?> elem : method.getElements(new TypeFilter<>(CtConstructorCall.class))) {
 					System.out.println("Constructor call : " + elem);
 
 					String targetSignature = elem.getExecutable().toString();

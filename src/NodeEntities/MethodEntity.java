@@ -3,7 +3,6 @@ package NodeEntities;
 import org.eclipse.jdt.core.dom.MethodDeclaration;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class MethodEntity  extends NodeEntity{
 
@@ -30,7 +29,7 @@ public class MethodEntity  extends NodeEntity{
 
     }
 
-    public void addParams(List parameters) {
+    public void addParams(List<Object> parameters) {
 
         for (Object o : parameters){
             params.add(o.toString());

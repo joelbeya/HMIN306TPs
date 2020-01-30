@@ -38,7 +38,8 @@ public class SourceCodeVisitor extends ASTVisitor{
     }
 
 
-    public boolean visit(TypeDeclaration node) {
+    @SuppressWarnings("unchecked")
+	public boolean visit(TypeDeclaration node) {
 
         String typeName = currentPackage.getName() + "." + node.getName().toString();
         System.out.println("Visiting type " + typeName);
@@ -89,7 +90,8 @@ public class SourceCodeVisitor extends ASTVisitor{
         return true;
     }
 
-    @Override
+    @SuppressWarnings("unchecked")
+	@Override
     public boolean visit(MethodDeclaration methodDeclaration) {
         ArrayList<MethodEntity> methods = new ArrayList<>(currentType.getMethods());
         currentMethod = null;

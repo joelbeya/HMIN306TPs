@@ -4,7 +4,6 @@ import com.mxgraph.swing.mxGraphComponent;
 import com.mxgraph.util.mxConstants;
 import com.mxgraph.view.mxGraph;
 import NodeEntities.MethodEntity;
-import NodeEntities.NodeEntity;
 import NodeEntities.TypeEntity;
 import relations.Relation;
 
@@ -15,7 +14,12 @@ import java.util.*;
 public class Grapher extends JFrame {
 
 
-    private static final int DEFAULT_WIDTH	= 100;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	private static final int DEFAULT_WIDTH	= 100;
     private static final int NODE_PADDING = 20;
     private static final int LINE_HEIGHT = 20;
     private static final int LETTER_WIDTH = 6;
@@ -49,7 +53,6 @@ public class Grapher extends JFrame {
 
     }
 
-    @SuppressWarnings("Duplicates")
     private void placeRelations(Set<Relation> relations) {
 
 
@@ -142,7 +145,6 @@ public class Grapher extends JFrame {
 
     }
 
-    @SuppressWarnings("Duplicates")
     private int getNodeWidth(TypeEntity te) {
         int width = te.toString().length();
 
@@ -153,7 +155,6 @@ public class Grapher extends JFrame {
         return width * LETTER_WIDTH;
     }
 
-    @SuppressWarnings("Duplicates")
     private double getNodeWidth(Set<String> methods) {
         int width = 0;
 
@@ -163,7 +164,6 @@ public class Grapher extends JFrame {
         return width * LETTER_WIDTH;
     }
 
-    @SuppressWarnings("Duplicates")
     private void endInit(){
 
         graph.setAllowDanglingEdges(false);
@@ -194,6 +194,10 @@ public class Grapher extends JFrame {
 
 
     }
+
+	public static int getDefaultWidth() {
+		return DEFAULT_WIDTH;
+	}
 
 
 }

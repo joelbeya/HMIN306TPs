@@ -15,7 +15,7 @@ import java.util.List;
 
 public class Main {
 
-    public static final String DEFAULT_SOURCE_PATH = "lib/SimpleSample/company/src";
+    public static final String DEFAULT_SOURCE_PATH = "/home/bj/eclipse-workspace/HMIN306TP2Partie2/src";
     private static final String PARSEABLE_EXTENSION = "java";
     private static ASTParser parser;
 
@@ -37,7 +37,6 @@ public class Main {
 
     }
 
-    @SuppressWarnings("Duplicates")
     private static void parse(File f, ApplicationEntity application) throws IOException {
         String str = readFileToString(f.getAbsolutePath());
         parser.setSource(str.toCharArray());

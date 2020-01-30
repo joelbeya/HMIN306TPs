@@ -1,13 +1,9 @@
 package GraphX;
 
 import com.mxgraph.swing.mxGraphComponent;
-import com.mxgraph.util.mxConstants;
 import com.mxgraph.view.mxGraph;
 import relations.MethodRelation;
-import NodeEntities.MethodEntity;
-import NodeEntities.NodeEntity;
 import NodeEntities.TypeEntity;
-import relations.Relation;
 
 import javax.swing.*;
 import java.awt.*;
@@ -16,7 +12,12 @@ import java.util.List;
 
 public class MethodsGrapher extends JFrame {
 
-    private static final int LINE_HEIGHT = 20;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	private static final int LINE_HEIGHT = 20;
     private static final int LETTER_WIDTH = 6;
     private int GRAPH_WIDTH = 800;
     private int GRAPH_HEIGHT = 600;
@@ -103,8 +104,6 @@ public class MethodsGrapher extends JFrame {
         return LETTER_WIDTH * called.length();
     }
 
-
-    @SuppressWarnings("Duplicates")
     private void endInit(){
 
         graph.setAllowDanglingEdges(false);

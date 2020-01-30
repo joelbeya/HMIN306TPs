@@ -13,7 +13,12 @@ import java.util.List;
 
         public class Dendrogram extends JFrame {
 
-            private static final int H_SPAN = 100;
+            /**
+			 * 
+			 */
+			private static final long serialVersionUID = 1L;
+			
+			private static final int H_SPAN = 100;
             private static final int V_SPAN = 100;
             private static final int LINE_HEIGHT = 20;
             private static final int LETTER_WIDTH = 6;
@@ -43,31 +48,32 @@ import java.util.List;
         endInit();
     }
 
-    @SuppressWarnings("Duplicates")
+
     private void createModel() {
 
         Set<String> classes = new HashSet<>();
 
 
         for (Relation r : Relation.getAllRelations()){
-//            System.out.println(r);
+            System.out.println(r);
             classes.add(r.getInputType());
             classes.add(r.getOutputType());
         }
 
-//        System.out.println("Classes : " + classes);
+        System.out.println("Classes : " + classes);
         Set<ClassCluster> baseClusters = new HashSet<>();
         for (String c : classes){
             baseClusters.add(new ClassCluster(Collections.singleton(c)));
         }
 
-//        for (ClassCluster cc : baseClusters){
-//            System.out.println(cc);
-//        }
+        for (ClassCluster cc : baseClusters){
+            System.out.println(cc);
+        }
 
         DendroLevel currentLevel = new DendroLevel(baseClusters);
-        DendroLevel baseLevel = currentLevel;
-//        System.out.println("Base : " + baseClusters);
+        @SuppressWarnings("unused")
+		DendroLevel baseLevel = currentLevel;
+        System.out.println("Base : " + baseClusters);
 //
         ArrayList<DendroLevel> levels = new ArrayList<>();
 //
@@ -84,7 +90,6 @@ import java.util.List;
 
     }
 
-    @SuppressWarnings("Duplicates")
     private void createTestModel(boolean complet) {
 
         Set<String> classes = new HashSet<>();
@@ -224,7 +229,6 @@ import java.util.List;
         return max * LETTER_WIDTH;
     }
 
-    @SuppressWarnings("Duplicates")
     private void endInit() {
 
         graph.setAllowDanglingEdges(false);

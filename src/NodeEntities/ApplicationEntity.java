@@ -136,7 +136,6 @@ public class ApplicationEntity extends NodeEntity {
         return avg;
     }
 
-    @SuppressWarnings("Duplicates")
     private List<ClassEntity> getClassTopTier(List<ClassEntity> classes){
         ArrayList<ClassEntity> top = new ArrayList<>();
         if (!classes.isEmpty()) {
@@ -150,7 +149,7 @@ public class ApplicationEntity extends NodeEntity {
         return top;
     }
 
-    @SuppressWarnings("Duplicates")
+  
     private List<MethodEntity> getMethodTopTier(List<MethodEntity> classes){
         ArrayList<MethodEntity> top = new ArrayList<>();
         if (!classes.isEmpty()) {

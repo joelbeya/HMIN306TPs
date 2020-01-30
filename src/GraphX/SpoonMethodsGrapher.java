@@ -1,12 +1,7 @@
 package GraphX;
 
 import com.mxgraph.swing.mxGraphComponent;
-import com.mxgraph.util.mxConstants;
 import com.mxgraph.view.mxGraph;
-import NodeEntities.MethodEntity;
-import NodeEntities.NodeEntity;
-import NodeEntities.TypeEntity;
-import relations.Relation;
 
 import javax.swing.*;
 import java.awt.*;
@@ -17,7 +12,12 @@ import java.util.Set;
 public class SpoonMethodsGrapher extends JFrame {
 
 
-    private static final int	DEFAULT_WIDTH		= 100;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	private static final int	DEFAULT_WIDTH		= 100;
     private static final int LINE_HEIGHT = 20;
     private static final int LETTER_WIDTH = 6;
     private int GRAPH_WIDTH = 800;
@@ -84,7 +84,6 @@ public class SpoonMethodsGrapher extends JFrame {
 
     }
 
-    @SuppressWarnings("Duplicates")
     private void endInit(){
 
         graph.setAllowDanglingEdges(false);
@@ -115,6 +114,26 @@ public class SpoonMethodsGrapher extends JFrame {
 
 
     }
+
+	public static int getDefaultWidth() {
+		return DEFAULT_WIDTH;
+	}
+
+	public Map<String, Integer> getNodesAxis() {
+		return nodesAxis;
+	}
+
+	public void setNodesAxis(Map<String, Integer> nodesAxis) {
+		this.nodesAxis = nodesAxis;
+	}
+
+	public Map<String, Object> getTypesNodes() {
+		return typesNodes;
+	}
+
+	public void setTypesNodes(Map<String, Object> typesNodes) {
+		this.typesNodes = typesNodes;
+	}
 
 
 }
